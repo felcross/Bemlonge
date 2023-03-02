@@ -1,0 +1,16 @@
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=4aedf0d95029462812afcd28693fa67c7eb0cb0a
+eclipse.preferences.version=1
+encoding//WebContent/cadastroGuia.jsp=ISO-8859-1
+encoding//WebContent/cadastroPacotePasseio.jsp=ISO-8859-1
+encoding//WebContent/consultaClientePacote.jsp=ISO-8859-1
+encoding//WebContent/consultaClientePasseio.jsp=ISO-8859-1
+encoding//WebContent/detalhesPasseioAdm.jsp=ISO-8859-1
+encoding//WebContent/index.jsp=ISO-8859-1
+encoding//WebContent/listarPacotes.jsp=ISO-8859-1
+encoding//WebContent/listarPasseiosAdm.jsp=ISO-8859-1
+encoding//WebContent/navbar.jsp=ISO-8859-1
+encoding//WebContent/pagamentoPacote.jsp=ISO-8859-1
+encoding//WebContent/pagamentoPasseio.jsp=ISO-8859-1
+encoding//WebContent/sucessoCompra.jsp=ISO-8859-1

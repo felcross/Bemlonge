@@ -1,0 +1,38 @@
+[2023-01-26 13:19:05,198]ERROR     0[main] - Teste.main(Teste.java:12) - teste
+[2023-01-26 13:19:32,249]ERROR     0[main] - Teste.main(Teste.java:12) - teste
+[2023-01-26 13:19:32,261]FATAL    12[main] - Teste.main(Teste.java:13) - teste 2
+[2023-01-26 13:24:40,132] INFO     0[main] - Teste.main(Teste.java:13) - teste info
+[2023-01-26 13:25:55,834] INFO     0[main] - Teste.main(Teste.java:13) - teste info
+[2023-01-26 16:43:20,114]ERROR     0[main] - br.com.bemlonge.dao.PacoteDAOImpl.listar(PacoteDAOImpl.java:73) - SQLException: Column 'data_emarque' not found.
+[2023-01-26 16:55:13,865]ERROR     1[main] - br.com.bemlonge.dao.MySQLDAO.getConnection(MySQLDAO.java:26) - SQLException: 
+java.sql.SQLException: Access denied for user 'bemlonge'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:965)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3933)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3869)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:864)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1707)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1217)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2189)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2220)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2015)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:768)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:56)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:39)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:527)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:403)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:385)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:323)
+	at java.sql.DriverManager.getConnection(DriverManager.java:419)
+	at java.sql.DriverManager.getConnection(DriverManager.java:467)
+	at br.com.bemlonge.dao.MySQLDAO.getConnection(MySQLDAO.java:21)
+	at br.com.bemlonge.dao.PacoteDAOImpl.listar(PacoteDAOImpl.java:61)
+	at TESTE.TESTE.main(TESTE.java:12)
+[2023-01-26 16:56:57,730]ERROR     0[main] - br.com.bemlonge.dao.MySQLDAO.getConnection(MySQLDAO.java:26) - SQLException: 
+[2023-01-26 16:57:31,453]ERROR     0[main] - br.com.bemlonge.dao.MySQLDAO.getConnection(MySQLDAO.java:23) - ClassNotFoundException: 
+java.lang.ClassNotFoundException: com.mysql.jdbc.Drive
+	at java.lang.Class.forName(Class.java:179)
+	at br.com.bemlonge.dao.MySQLDAO.getConnection(MySQLDAO.java:20)
+	at br.com.bemlonge.dao.PacoteDAOImpl.listar(PacoteDAOImpl.java:61)
+	at TESTE.TESTE.main(TESTE.java:12)

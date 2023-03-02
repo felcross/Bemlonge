@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts  
+Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<constant name="struts.devMode" value="true" />
+	<package name="BemLonge" extends="struts-default">
+
+		<!-- CLIENTE ACTION -->
+		<action name="cadastrarCliente" class="br.com.bemlonge.action.ClienteAction"
+			method="cadastrarCliente">
+			<result name="success">sucessoCliente.jsp</result>
+			<result name="existente">cadastroCliente.jsp</result>
+			<result name="error">erroCliente.jsp</result>
+			<result name="voltar">cadastroCliente.jsp</result>
+		</action>
+		<action name="cadastrarClientePotencialPasseio" class="br.com.bemlonge.action.ClienteAction"
+			method="cadastrarClientePotencial">
+			<result name="success" type="redirectAction">
+				<param name="actionName">passeios</param>
+			</result>
+		</action>
+		<action name="cadastrarClientePotencialPacote" class="br.com.bemlonge.action.ClienteAction"
+			method="cadastrarClientePotencial">
+			<result name="success" type="redirectAction">
+				<param name="actionName">pacotes</param>
+			</result>
+		</action>
+		<action name="alterarCliente" class="br.com.bemlonge.action.ClienteAction"
+			method="alterarCliente">
+			<result name="success">areaCliente.jsp</result>
+		</action>
+		<action name="listarCliente" class="br.com.bemlonge.action.ClienteAction"
+			method="listarCliente">
+			<result name="success">areaCliente.jsp</result>
+			<result name="error">erroCliente.jsp</result>
+		</action>
+		<action name="detalhesCliente" class="br.com.bemlonge.action.ClienteAction"
+			method="listarCliente">
+			<result name="success">detalhesCliente.jsp</result>
+			<result name="error">erroCliente.jsp</result>
+		</action>
+		<action name="iniciarCliente" class="br.com.bemlonge.action.ClienteAction"
+			method="iniciarCliente">
+			<result name="success">cadastroCliente.jsp</result>
+			<result name="error">erroCliente.jsp</result>
+		</action>
+		<action name="consultaCadastro" class="br.com.bemlonge.action.ClienteAction"
+			method="consultarCadastro">
+			<result name="success" type="redirectAction">
+				<param name="actionName">listarCliente</param>
+				<param name="clienteDto.cpf">${clienteDto.cpf}</param>
+			</result>
+			<result name="inexistente">acessoCliente.jsp</result>
+		</action>
+		<action name="listarFaturaClienteAdmin" class="br.com.bemlonge.action.ClienteAction"
+			method="listarFaturaClienteAdmin">
+			<result name="success">areaClienteAdm.jsp</result>
+			<result name="error">erroCliente.jsp</result>
+		</action>
+		<action name="listarClientesAdm"
+			class="br.com.bemlonge.action.ClienteAction" method="limparFiltroCliente">
+			<result name="success">listarClienteAdm.jsp</result>
+		</action>
+		<action name="filtrarClientesAdm"
+			class="br.com.bemlonge.action.ClienteAction" method="filtrarClientes">
+			<result name="success">listarClienteAdm.jsp</result>
+		</action>
+
+		<!-- GUIA ACTION -->
+		<action name="salvarGuia" class="br.com.bemlonge.action.GuiaAction"
+			method="salvarGuia">
+			<result name="success">sucessoAdm.jsp</result>
+			<result name="existente">cadastroGuia.jsp</result>
+			<result name="error">cadastroGuia.jsp</result>
+			<result name="voltar">cadastroGuia.jsp</result>
+		</action>
+		<action name="filtrarGuias" class="br.com.bemlonge.action.GuiaAction"
+			method="filtrarGuias">
+			<result name="success">listarGuiasAdm.jsp</result>
+			<result name="error">index.jsp</result>
+		</action>
+		<action name="guias" class="br.com.bemlonge.action.GuiaAction">
+			<result name="success">listarGuiasAdm.jsp</result>
+			<result name="error">erroAdm.jsp</result>
+		</action>
+
+		<!-- PACOTE ACTION -->
+		<action name="salvarPacote" class="br.com.bemlonge.action.PacoteAction"
+			method="salvarPacote">
+			<result name="success">sucessoAdm.jsp</result>
+			<result name="error">cadastroPacote.jsp</result>
+		</action>
+		<action name="filtrarPacotesAdm" class="br.com.bemlonge.action.PacoteAction"
+			method="filtrarPacotesAdm">
+			<result name="success">listarPacotesAdm.jsp</result>
+		</action>
+		<action name="pacotes" class="br.com.bemlonge.action.PacoteAction">
+			<result name="success">listarPacotes.jsp</result>
+		</action>
+		<action name="filtro" class="br.com.bemlonge.action.PacoteAction"
+			method="filtrar">
+			<result name="success">listarPacotes.jsp</result>
+			<result name="error">listarPacotes.jsp</result>
+		</action>
+		<action name="detalhesPacote" class="br.com.bemlonge.action.PacoteAction"
+			method="detalharPacote">
+			<result name="success">detalhesPacote.jsp</result>
+		</action>
+		<action name="consultaCadPacote" class="br.com.bemlonge.action.PacoteAction"
+			method="consultarTelaCadastro">
+			<result name="success">consultaClientePacote.jsp</result>
+		</action>
+		<action name="pacotesAdm" class="br.com.bemlonge.action.PacoteAction">
+			<result name="success">listarPacotesAdm.jsp</result>
+		</action>
+		<action name="admDetalhesPacote" class="br.com.bemlonge.action.PacoteAction"
+			method="listarPacote">
+			<result name="error">erroAdm.jsp</result>
+			<result name="success">detalhesPacoteAdm.jsp</result>
+		</action>
+
+		<!-- PASSEIO ACTION -->
+		<action name="listarGuias" class="br.com.bemlonge.action.PasseioAction"
+			method="listarGuias">
+			<result name="success">cadastroPasseio.jsp</result>
+		</action>
+		<action name="salvarPasseio" class="br.com.bemlonge.action.PasseioAction"
+			method="salvarPasseio">
+			<result name="success">sucessoAdm.jsp</result>
+			<result name="error">erroAdm.jsp</result>
+		</action>
+		<action name="passeios" class="br.com.bemlonge.action.PasseioAction"
+			method="listarPasseiosAtivos">
+			<result name="success">listarPasseios.jsp</result>
+			<result name="error">erroAdm.jsp</result>
+		</action>
+		<action name="filtrarPasseio" class="br.com.bemlonge.action.PasseioAction"
+			method="filtrarPasseio">
+			<result name="success">listarPasseios.jsp</result>
+		</action>
+		<action name="detalharPasseio" class="br.com.bemlonge.action.PasseioAction"
+			method="detalharPasseio">
+			<result name="success">detalhesPasseio.jsp</result>
+		</action>
+		<action name="consultaPasseio" class="br.com.bemlonge.action.PasseioAction">
+			<result name="success">listarPasseiosAdm.jsp</result>
+		</action>
+		<action name="filtrarPasseiosAdm" class="br.com.bemlonge.action.PasseioAction"
+			method="filtrarPasseioAdm">
+			<result name="success">listarPasseiosAdm.jsp</result>
+		</action>
+		<action name="editarPasseio" class="br.com.bemlonge.action.PasseioAction"
+			method="editarPasseio">
+			<result name="success">detalhesPasseioAdm.jsp</result>
+		</action>
+		<action name="editar" class="br.com.bemlonge.action.PasseioAction"
+			method="confirmarEdicaoPasseio">
+			<result name="success" type="redirectAction">
+				<param name="actionName">consultaPasseio</param>
+			</result>
+		</action>
+
+		<!-- PASSEIO PACOTE ACTION -->
+		<action name="salvarPasseioPacote" class="br.com.bemlonge.action.PacotePasseioAction">
+			<result name="success">cadastroPacotePasseio.jsp</result>
+		</action>
+		<action name="cadastrarPasseioPacote" class="br.com.bemlonge.action.PacotePasseioAction"
+			method="cadastrar">
+			<result name="success">sucessoAdm.jsp</result>
+		</action>
+
+		<!-- CONSULTAS ACTION -->
+		<action name="consultaCpf" class="br.com.bemlonge.action.ConsultaCadClienteAction"
+			method="consultaCpf">
+			<result name="existente">pagamentoPasseio.jsp</result>
+			<!-- <result name="success" type="chain">pagamentoPasseio</result> -->
+			<result name="success">consultaClientePasseio.jsp</result>
+			<result name="voltar">consultaClientePasseio.jsp</result>
+		</action>
+		<action name="detalharPasseioCad" class="br.com.bemlonge.action.ConsultaCadClienteAction"
+			method="detalharPasseioCad">
+			<result name="success">consultaClientePasseio.jsp</result>
+		</action>
+		<action name="pagamentoPacote"
+			class="br.com.bemlonge.action.ConsultaCadClientePacoteAction" method="consultaCpf">
+			<result name="existente">pagamentoPacote.jsp</result>
+			<result name="success">consultaClientePacote.jsp</result>
+		</action>		
+
+		<!-- PAGAMENTO ACTION -->
+		<action name="realizarCompraPacote" class="br.com.bemlonge.action.PagamentoAction"
+			method="realizarCompraPacote">
+			<result name="success">sucessoCompra.jsp</result>
+		</action>
+		<action name="realizarCompraPasseio" class="br.com.bemlonge.action.PagamentoAction"
+			method="realizarCompraPasseio">
+			<result name="success">sucessoCompra.jsp</result>
+		</action>
+	</package>
+</struts>  
