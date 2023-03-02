@@ -7,3 +7,4 @@ com o uso de padrões como DAO pro acesso ao banco e DTO ao invés de acesso dir
 - JSP
 - MySql
 - Struts2/MVC
+- Bootstrap
